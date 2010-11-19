@@ -1,0 +1,14 @@
+CMake scripts to register GDB pretty printers for ITK on targets.
+
+If the following is in your CMakeLists.txt,
+
+  add_executable( myexe main.cxx )
+  target_link_libraries( myexe ITKCommon ITKIO )
+
+then the CMake function GDB_PRETTY_ITK() can be applied to let GDB know that
+*myexe* contains objects that can be examined with ITK pretty-printers.
+
+  GDB_PRETTY_ITK( myexe )
+
+CMake configuration variables are also made available to indicate which ITK
+pretty-printers are installed.
